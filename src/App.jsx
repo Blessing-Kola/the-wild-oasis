@@ -19,8 +19,7 @@ import { PiAddressBook } from "react-icons/pi";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 0,
-      // staleTime: 60 * 1000,
+      staleTime: 0 * 1000,
     },
   },
 });
