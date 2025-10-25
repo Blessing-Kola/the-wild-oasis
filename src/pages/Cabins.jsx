@@ -19,8 +19,8 @@ const Cabins = () => {
         <CabinTable />
 
         <Button
-          variation="primary"
           size="medium"
+          variation="primary"
           onClick={() => setShowForm((show) => !show)}
         >
           Add new cabin

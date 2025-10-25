@@ -14,7 +14,7 @@ function CreateCabinForm() {
   const { register, handleSubmit, reset, getValues, formState } = useForm();
   const { errors } = formState;
   const queryClient = useQueryClient();
-  const { name, maxCapacity, regularPrice, discount, description, image } =
+  const { name, maxCapacity, regularPrice, discount, description, image: filelist } =
     newCabin;
 
   const { mutate, isLoading: isCreating } = useMutation({
@@ -31,7 +31,10 @@ function CreateCabinForm() {
 
   function onSubmit(data) {
     // console.log(data);
-    mutate(data);
+    // console.log(data.image[0].name);
+    // console.log(data.image[0]);
+    // mutate({ ...data, image: data.image.at(0) });
+    mutate({ ...data, image: data.image[0] });
   }
 
   function onError(errors) {
